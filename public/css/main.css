@@ -1,0 +1,85 @@
+* {
+    background-color: gray;
+}
+
+.background {
+    background-image: url('https://www.abercrombiekent.co.uk/-/media/abercrombieandkent/images/page-header-images/asia/japan/hakone-and-mount-fuji/hakone--mt-fuji0000japan-mt-fuji-sunset-shutterstock167068688.jpg?la=en&hash=B7879BEB6762893984C13D78EEE85727EC443B9E');
+    height: 500px;
+    background-position: 40%;
+}
+
+:root {
+    --header: black;
+
+}
+
+.header {
+    background-color: var(--header);
+    height: 90px;
+}
+
+h1 {
+    display: inline-block;
+    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 20px;
+    background-color: var(--header);
+}
+
+nav {
+    float: right;
+    color: #ddd;
+    margin-right: 20px;
+    background-color: var(--header);
+}
+
+.dropbtn {
+    background-color: var(--header);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: var(--header);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .show {
+    display:block;
+}
+
+ul {
+    background-color: var(--header);
+}
+
+li {
+    display: inline-block;
+    padding: 0px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+    background-color: var(--header);
+  }
+
+p{
+    background-color: var(--header);
+  }
