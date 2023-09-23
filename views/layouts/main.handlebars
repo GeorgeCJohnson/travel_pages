@@ -34,3 +34,16 @@
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
     </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+
+    {{!logic to handle login/signup buttons}} 
+        {{#unless user.isLoggedIn}}
+        <a class="js-signin-modal-trigger btn btn-light login-nav-Btn" href="#0" data-signin="login">Log in</a>
+        <a class="js-signin-modal-trigger btn btn-light login-nav-Btn" href="#0" data-signin="signup">Sign up</a>
+        <a class="nav-item nav-link active" role="button" href="/discover" data-toggle="tooltip"                data-placement="top" title="Discover">
+<!-- Insert icon that navigates to discover_page.handlebars -->
+            <i class="bi bi-compass navIcon"></i>
+        </a>
+        <a class="nav-item nav-link active" href="/pins/user" data-toggle="tooltip" data-placement="top" title="Pins">
