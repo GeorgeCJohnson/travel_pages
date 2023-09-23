@@ -52,4 +52,34 @@
         </a>
         <img src="" class="nav-item nav-link active dropdown-toggle user-avatar"
         href="#" role="button" id="user-profile-pic" data-bs-toggle="dropdown" data-toggle="tooltip" title="Profile" aria-expanded="false" width="50px" />
-  
+              <a class="nav-item nav-link active dropdown-toggle" href="#" role="button" id="user-username"
+              data-bs-toggle="dropdown" aria-expanded="false"></a>
+            <ul class="dropdown-menu" aria-labelledby="user-username">
+              <li><a class="dropdown-item" href="/editprofile">Settings</a></li>
+              <li><a class="dropdown-item" id="logout-btn" href="/logout">Logout</a></li>
+            </ul>
+          </div>
+<!--J Dempe assisted with the styling and pins ideas-->
+        {{else}}
+        <a class="nav-item nav-link active" role="button" href="/discover" data-toggle="tooltip" data-placement="top" title="Discover">
+<!-- Insert icon that navigates to discover_page.handlebars -->
+        <i class="bi bi-compass navIcon"></i>
+        </a>
+        <a class="nav-item nav-link active" href="/pins/user" data-toggle="tooltip" data-placement="top" title="Pins">
+<!-- Insert icon that navigates to pins.handlebars -->
+            <i class="bi bi-pin-map-fill navIcon"></i>
+        </a>
+        <img src="" class="nav-item nav-link active dropdown-toggle user-avatar"
+        href="#" role="button" id="user-profile-pic" data-bs-toggle="dropdown" data-toggle="tooltip" title="Profile" aria-expanded="false" width="50px" />
+              <a class="nav-item nav-link active dropdown-toggle" href="#" role="button" id="user-username"
+              data-bs-toggle="dropdown" aria-expanded="false"></a>
+            <ul class="dropdown-menu" aria-labelledby="user-username">
+              <li><a class="dropdown-item" href="/editprofile">Settings</a></li>
+              <li><a class="dropdown-item" id="logout-btn" href="/logout">Logout</a></li>
+            </ul>
+          </div>
+        {{/unless}}
+      </div>
+    </div>
+  </nav>
+</header>
