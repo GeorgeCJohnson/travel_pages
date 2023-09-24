@@ -1,47 +1,47 @@
 <nav>
-    <div id="nav-tab-personal-pins" class="nav nav-tabs" role="tablist">
-        <button class="nav-link active nav-color" id="nav-mypin-tab" data-bs-toggle="tab"
-            data-bs-target="#nav-mine, #create-new-pin" type="button" role="tab" aria-controls="nav-mypin"
-            aria-selected="true">My Pins</button>
-        <button class="nav-link nav-color" id="nav-savedpin-tab" data-bs-toggle="tab"
-            data-bs-target="#nav-pinned, #refresh-pin" type="button" role="tab" aria-controls="nav-savedpin"
-            aria-selected="false">Saved Pins</button>
-    </div>
+  <div id="nav-tab-personal-pins" class="nav nav-tabs" role="tablist">
+    <button class="nav-link active nav-color" id="nav-mypin-tab" data-bs-toggle="tab"
+      data-bs-target="#nav-mine, #create-new-pin" type="button" role="tab" aria-controls="nav-mypin"
+      aria-selected="true">My Pins</button>
+    <button class="nav-link nav-color" id="nav-savedpin-tab" data-bs-toggle="tab"
+      data-bs-target="#nav-pinned, #refresh-pin" type="button" role="tab" aria-controls="nav-savedpin"
+      aria-selected="false">Saved Pins</button>
+  </div>
 </nav>
 <div>
-    <div class="create-search-section ">
-{{!-- Create a new pin button --}}
+  <div class="create-search-section ">
+    {{!-- Create a new pin button --}}
     <div class="tab-content">
-        <div id="create-new-pin" class="tab-pane fade show active" role="tabpanel">
-            <a id="create-new-pin-btn" class="btn create-text" role="button">
-            <i class="bi bi-plus-square-fill"></i>
-            Create a new pin</a>
-        </div>
-        <div id="refresh-pin" class="tab-pane fade" role="tabpanel">
-{{!-- Reload the page button --}}
-            <a id="refresh-pin-btn" class="btn btn-refresh" role="button">
-            <i class="bi bi-arrow-clockwise"></i>
-            Refresh saved pins</a>
-        </div>
-<!-- Search bar -->
+      <div id="create-new-pin" class="tab-pane fade show active" role="tabpanel">
+        <a id="create-new-pin-btn" class="btn create-text" role="button">
+          <i class="bi bi-plus-square-fill"></i>
+          Create a new pin</a>
+      </div>
+      <div id="refresh-pin" class="tab-pane fade" role="tabpanel">
+        {{!-- Reload the page button --}}
+        <a id="refresh-pin-btn" class="btn btn-refresh" role="button">
+          <i class="bi bi-arrow-clockwise"></i>
+          Refresh saved pins</a>
+      </div>
+      <!-- Search bar -->
     </div>
-{{> search-bar}}
+    {{> search-bar}}
 
-</div>
-<div class="no-results-container no-results-container-noshow">
+  </div>
+  <div class="no-results-container no-results-container-noshow">
     <div>
-        <span class="no-results-shrug">¯\_(ツ)_/¯</span>
-        <span class="no-results-text">No results found</span>
-{{!-- <img src="" alt="No Results"> --}}
+      <span class="no-results-shrug">¯\_(ツ)_/¯</span>
+      <span class="no-results-text">No results found</span>
+      {{!-- <img src="" alt="No Results"> --}}
     </div>
-</div>
+  </div>
 
-<div class="tab-content">
-    <div id="nav-mine" class="tab-pane fade show active" role="tabpanel"  aria-labelledby="nav-mine-tab">
+  <div class="tab-content">
+    <div id="nav-mine" class="tab-pane fade show active" role="tabpanel" aria-labelledby="nav-mine-tab">
 
-{{!-- Handle case when user has no pin --}}
-{{> personal-pin}}
-</div>
+      {{!-- Handle case when user has no pin --}}
+      {{> personal-pin}}
+    </div>
     <div id="nav-pinned" class="tab-pane fade" role="tabpanel" aria-labelledby="nav-pinned-tab">
       {{> discovery-pin}}
 
@@ -63,7 +63,8 @@
         <form class="card-body needs-validation" novalidate>
           <div class="card-top-section">
             <!-- Display pin name -->
-            <input required type="text" class="card-title" placeholder="Enter Title" aria-label="Pin Title" minlength="1">
+            <input required type="text" class="card-title" placeholder="Enter Title" aria-label="Pin Title"
+              minlength="1">
             <div class="valid-feedback">
               Great!
             </div>
@@ -77,13 +78,8 @@
           </div>
           <hr class="hr card-hr" />
           <!-- Card -->
-          <textarea
-            class="card-text form-control"
-            placeholder="Enter Text"
-            id="validationTextarea"
-            aria-label="Pin Body Text"
-            required
-          ></textarea>
+          <textarea class="card-text form-control" placeholder="Enter Text" id="validationTextarea"
+            aria-label="Pin Body Text" required></textarea>
           <div class="changes-btn-container">
             <button type="button" class="btn btn-primary save-btn save-btn-submit">
               Save Changes
