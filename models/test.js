@@ -54,8 +54,7 @@ User.init(
       type: DataTypes.TEXT,
       allowNull: true,
     },
-
-    // avatar_id is a foreign key that references the id in the avatars table.
+    // join avatar and user table
     // each users can have multiple avatars and vice versa.
     avatar_id: {
       type: DataTypes.INTEGER,
