@@ -1,0 +1,61 @@
+{{#each discoveryPins}}
+  <div class="pin" data-pinid="{{pinID}}">
+
+    <!-- CONTAINS DATE -->
+    <div class="date-container">
+      <hr class="hr date-hr" />
+      <div class="timestamp">{{pinDate}}</div>
+      <hr class="hr date-hr" />
+    </div>
+
+    <!-- CONTAINS CARD -->
+    <div class="card-container">
+      <div class="card card-pin-color">
+        <div class="card-body was-validated">
+          <div class="card-top-section">
+
+            <!--PIN TITLE -->
+            <div class="card-title">
+              {{pinTitle}}
+            </div>
+
+            <!-- Confirmation required -->
+            <div class="card-icon-section card-pinning">
+
+              <!-- PIN ICON -->
+              <i
+                class="bi bi-pin card-icon card-icon-pin"
+                data-bs-toggle="popover"
+                data-bs-placement="bottom"
+                data-bs-content="Login to save pins!"
+                data-bs-trigger="focus"
+                tabindex="0"
+              ></i>
+            </div>
+
+          </div>
+
+          <hr class="hr card-hr" />
+          <div class="avatar-container">
+            <div class="avatar-border">
+              <img src="{{pinAvatar}}" class="pin-avatar" width="48px" />
+            </div>
+            <div class="username-content">
+              <div class="card-username">{{pinUsername}}</div>
+              <div class="pin-updated">{{pinUpdated}}</div>
+            </div>
+          </div>
+
+          <div class="card-location">
+            {{pinLocation}}
+          </div>
+
+          <!-- CARD TEXT -->
+          <p class="card-text">
+            {{pinDescription}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
