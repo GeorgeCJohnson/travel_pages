@@ -16,13 +16,13 @@ sequelize.define("Session", {
     },
 });
   
-    function extendDefaultFields(defaults, session) {
-        return {
-        data: defaults.data,
-        expires: defaults.expires,
-        user_id: session.user_id,
-        logged_in: session.logged_in,     
-        };
-    } 
+function extendDefaultFields(defaults, session) {
+    return {
+    data: defaults.data,
+    expires: defaults.expires,
+    user_id: session.user_id,
+    logged_in: session.logged_in,     
+    };
+} 
   
-  module.exports = { extendDefaultFields }; 
+module.exports = { extendDefaultFields }; 
