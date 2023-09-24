@@ -1,0 +1,65 @@
+<main class="container d-flex flex-wrap profile-background" id="user-profile">
+{{! Put avatar here }}
+    <div id="editprofile-avatar" class="col-3">
+        <image id="editprofile-avatar-image" src="./{{avatar.avatarsImage}}" class="rounded-circle" alt="avatar icon" width="225" height="225"> </image>
+<!-- Button trigger modal -->
+        <button id="changeAvatarBtn" type="button" class="btn bi bi-camera" data-toggle="modal"
+        data-target="#avatarChoiceModal"></button>
+    </div>
+
+{{! FORM AREA }}
+    <div id="editaccount-forms" class="col-9">
+{{! Edit profile form }}
+        <form id="editprofile-form" class="col needs-validation" novalidate>
+        <h2>User Profile</h2>
+        <div class="mb-3 col">
+{{! Username Textarea }}
+            <label for="username-form" class="form-label">Username</label>
+            <input type="text" class="form-control" id="editprofile-username" placeholder="Your username..."
+                value="{{user.username}}" required pattern="[a-zA-Z0-9]+" minlength="3" maxlength="20" data-bs-toggle="popover"  title="Username Requirements" data-bs-trigger="focus" data-bs-placement="left" fallbackPlacements=['left', 'bottom', 'top', 'right'] data-html="true" data-bs-content="Must contain only alphanumeric characters and be between 3 and 20 characters."/>
+            <div class="valid-feedback">
+            Looks Great!
+            </div>
+        <div class="invalid-feedback">
+        Please choose a username between 3 and 20 characters.
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col">
+{{! First Name textarea }}
+            <label for="editprofile-firstname" class="form-label">First Name</label>
+            <input value="{{user.first_name}}" type="text" class="form-control" id="editprofile-firstname"
+                placeholder="First name" required pattern="[A-Za-z\s]+" minlength="1" maxlength="20" />
+            <div class="valid-feedback">
+            Looks Great!
+            </div>
+        <div class="invalid-feedback">
+            Please provide your first name.
+        </div>
+    </div>
+    <div class="mb-3 col">
+{{! Last name text area }}
+        <label for="editprofile-lastname" class="form-label">Last Name</label>
+        <input value="{{user.last_name}}" type="text" class="form-control" id="editprofile-lastname"
+        placeholder="Last name" required pattern="[A-Za-z\s]+" minlength="1" maxlength="20" />
+    <div class="valid-feedback">
+        Looks Great!
+    </div>
+            <div class="invalid-feedback">
+            Please provide your last name.
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+{{! About Me textarea }}
+        <label for="editprofile-aboutme" class="form-label">About Me</label>
+        <textarea class="form-control" placeholder="Tell us a little about yourself!" id="editprofile-aboutme" rows="3">{{user.about_me}}</textarea>
+    </div>
+        <input type="hidden" name="user_id" id="editsecurity-id" value="{{user.id}}">
+    <div class="row">
+{{! Submit Button }}
+    <div class="mb-3 col text-end">
+        <button disabled id="editprofile-submitBtn" type="submit" class="btn btn-primary">Confirm</button>
+        </div>
+    </div>
+</form>    
