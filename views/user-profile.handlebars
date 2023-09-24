@@ -62,4 +62,43 @@
         <button disabled id="editprofile-submitBtn" type="submit" class="btn btn-primary">Confirm</button>
         </div>
     </div>
-</form>    
+</form>
+
+{{! EDIT SECURITY SETTINGS FORM }}
+<form id="editsecurity-form" class="col" novalidate>
+    <h2>Account Security</h2>
+    <div class="mb-3 col">
+        <label for="editsecurity-email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="editsecurity-email" disabled value="{{user.email}}" />
+    </div>
+    <div class="row">
+        <div class="mb-3 col">
+            <label for="editsecurity-password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="editsecurity-password" placeholder="New Password" max="128" data-bs-toggle="popover"  title="Password Requirements" data-bs-trigger="focus" data-bs-placement="left" fallbackPlacements=['left', 'bottom', 'top', 'right'] data-html="true" data-bs-content="Must contain at least one uppercase letter, lowercase letter, number, and special character and be between 8 and 128 characters.">
+                <div class="valid-feedback">
+                Looks Great!
+                </div>
+        <div class="invalid-feedback">
+                Be sure to check the requirements!
+        </div>
+    </div>
+    <div class="mb-3 col">
+        <label for="editsecurity-confirmpassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="editsecurity-confirmpassword" placeholder="New Password" max="128"/>
+            <div class="valid-feedback">
+            Looks Great!
+    </div>
+    <div class="invalid-feedback">
+            Passwords do not match!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="mb-3 col text-end">
+            <button id="editsecurity-deleteBtn" type="submit" class="btn btn-danger">Delete Account</button>
+            <button disabled id="editsecurity-submitBtn" type="submit" class="btn btn-primary">Confirm</button>
+        </div>
+        </div>
+    </form>
+    </div>
+</main>
