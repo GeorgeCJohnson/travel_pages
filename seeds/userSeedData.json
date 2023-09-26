@@ -1,0 +1,50 @@
+[
+    {
+      "username": "besco31",
+      "first_name": "Benjamin",
+      "last_name": "Escobar",
+      "email": "helloworld1@gmail.com",
+      "password": "Welcome2!",
+      "avatar_id": 1
+    },
+    {
+        "username": "GeorgeTravels",
+        "first_name": "George",
+        "last_name": "Johnson",
+        "email": "ilovecoding@gmail.com",
+        "password": "yup!HeIsCool",
+        "avatar_id": 2
+      },
+      {
+        "username": "DManthegreat",
+        "first_name": "Devon",
+        "last_name": "Hua",
+        "email": "Dmanthegreat@aol.com",
+        "password": "rockyourworld1!",
+        "avatar_id": 3
+      },
+    {
+      "username": "JohnCatchesFlights",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "jdoe@yahoo.com",
+      "password": "hereigo!",
+      "avatar_id": 4
+    },
+    {
+      "username": "JaneRocks",
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "email": "hihi@hotmail.com",
+      "password": "pWordhello!",
+      "avatar_id": 2
+    },
+    {
+      "username": "JennyHtravels",
+      "first_name": "Jennifer",
+      "last_name": "Hollister",
+      "email": "JennyH@aol.com",
+      "password": "hellOPW231!",
+      "avatar_id": 1
+    }
+  ]
