@@ -1,0 +1,107 @@
+#user-profile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: fit-content;
+    background-color: #ffffff;
+    border-radius: 4px;
+  }
+  
+  #user-profile h2 {
+    font-size: 2rem;
+    padding: 10px 0px;
+  }
+  
+  #editprofile-avatar {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+  }
+  
+  .editprofile-alert {
+    pointer-events: all;
+  }
+  
+  #editprofile-form, #editsecurity-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: fit-content;
+    background-color: #ffffff;
+    border-radius: 4px;
+  }
+  
+  #editprofile-avatar{
+    position: relative;
+  }
+  
+  #user-profile img {
+    margin: 40px auto;
+  }
+  
+  #user-profile #changeAvatarBtn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 40px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.797);
+    border: #00396148 2px solid;
+    opacity: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #user-profile #changeAvatarBtn:hover {
+  opacity: 100%;
+  transition: all 0.3s ease-in-out;
+  }
+  
+  #avatarChoiceModal .modal-content {
+    height: 75vh;
+  }
+  
+  #avatar-selection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 100%;
+    height: fit-content;
+    background-color: #ffffff;
+    border-radius: 4px;
+  }
+  
+  #avatar-selection img {
+    margin: 0 auto;
+    padding: 4px 0px;
+    width: fit-content;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  #avatar-selection img:hover {
+    scale: 1.2;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  #editprofile-alert-area {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-width: fit-content;
+    padding: 20px;
+  }
+  
+  .btn.btn-primary[disabled] {
+    background-color: #a4a3a3;
+    border: #a4a3a3;
+  }
