@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const {Pins, user, Avatars} = require("../../models"); 
+const { Pins, User, Avatars } = require("../../models");
+
 
 //GET route to retrieve all pins
 router.get("/", async (req, res) => {
