@@ -1,353 +1,366 @@
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<Survey Version="1.0" Full="1" MaxQuestionID="1" MaxResponseID="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="new_askia_flexible.xsd">
+    <Languages>
+        <Language ID="2057" Abbr="ENG" Name="English (United Kingdom)" Default="1" />
+    </Languages>
+    <Questions>
+        <html lang="en">
 
-<head>
-    <title>TravelPages</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href="/" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="./css/reset.css" rel="stylesheet" />
-    <link href="./css/modal.css" rel="stylesheet" />
-    <link href="./css/style.css" rel="stylesheet" />
-    {{!-- Load all available styles --}}
-    {{#each styles}}
-    <link href="./css/{{this}}.css" rel="stylesheet" />
-    {{/each}}
-</head>
+        <head>
+            <title>
+                TravelPages
+            </title>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <base href="/" />
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+            <link rel="manifest" href="/site.webmanifest">
+            <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet" />
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet" />
+            <link href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap"
+                rel="stylesheet" />
+            <link href="./css/reset.css" rel="stylesheet" />
+            <link href="./css/modal.css" rel="stylesheet" />
+            <link href="./css/style.css" rel="stylesheet" />
+            {{!-- Load all available styles --}}{{#each styles}}
+            <link href="./css/{{this}}.css" rel="stylesheet" />
+            {{/each}}
+            </link>
 
-<body>
-    <header>
-        <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand font-test text-center" href="/">TravelPages</a>
-            </div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-
-                    {{!logic to handle login/signup buttons}}
-                    {{#unless user.isLoggedIn}}
-                    <a class="js-signin-modal-trigger btn btn-light login-nav-Btn" href="#0" data-signin="login">Log
-                        in</a>
-                    <a class="js-signin-modal-trigger btn btn-light login-nav-Btn" href="#0" data-signin="signup">Sign
-                        up</a>
-                    <a class="nav-item nav-link active" role="button" href="/discover" data-toggle="tooltip"
-                        data-placement="top" title="Discover">
-                        <!-- Insert icon that navigates to discover_page.handlebars -->
-                        <i class="bi bi-compass navIcon"></i>
-                    </a>
-                    <a class="nav-item nav-link active" href="/pins/user" data-toggle="tooltip" data-placement="top"
-                        title="Pins">
-                        <!-- Insert icon that navigates to pins.handlebars -->
-                        <i class="bi bi-pin-map-fill navIcon"></i>
-                    </a>
-                    <img src="" class="nav-item nav-link active dropdown-toggle user-avatar" href="#" role="button"
-                        id="user-profile-pic" data-bs-toggle="dropdown" data-toggle="tooltip" title="Profile"
-                        aria-expanded="false" width="50px" />
-                    <a class="nav-item nav-link active dropdown-toggle" href="#" role="button" id="user-username"
-                        data-bs-toggle="dropdown" aria-expanded="false"></a>
-                    <ul class="dropdown-menu" aria-labelledby="user-username">
-                        <li><a class="dropdown-item" href="/editprofile">Settings</a></li>
-                        <li><a class="dropdown-item" id="logout-btn" href="/logout">Logout</a></li>
-                    </ul>
-                </div>
-                <!--J Dempe assisted with the styling and pins ideas-->
-                {{else}}
-                <a class="nav-item nav-link active" role="button" href="/discover" data-toggle="tooltip"
-                    data-placement="top" title="Discover">
-                    <!-- Insert icon that navigates to discover_page.handlebars -->
-                    <i class="bi bi-compass navIcon"></i>
-                </a>
-                <a class="nav-item nav-link active" href="/pins/user" data-toggle="tooltip" data-placement="top"
-                    title="Pins">
-                    <!-- Insert icon that navigates to pins.handlebars -->
-                    <i class="bi bi-pin-map-fill navIcon"></i>
-                </a>
-                <img src="" class="nav-item nav-link active dropdown-toggle user-avatar" href="#" role="button"
-                    id="user-profile-pic" data-bs-toggle="dropdown" data-toggle="tooltip" title="Profile"
-                    aria-expanded="false" width="50px" />
-                <a class="nav-item nav-link active dropdown-toggle" href="#" role="button" id="user-username"
-                    data-bs-toggle="dropdown" aria-expanded="false"></a>
-                <ul class="dropdown-menu" aria-labelledby="user-username">
-                    <li><a class="dropdown-item" href="/editprofile">Settings</a></li>
-                    <li><a class="dropdown-item" id="logout-btn" href="/logout">Logout</a></li>
-                </ul>
-            </div>
-            {{/unless}}
-            </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Main Page -->
-        {{{body}}}
-    </main>
-    <footer class="text-center text-lg-start bg-light text-muted">
-
-        <!-- Social Media Content -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-
-            <!-- Get connected section -->
-            <div class="me-5 d-none d-lg-block">
-                <span>Get connected with us!:</span>
-            </div>
-
-            <!-- Website description / links / contact  -->
-            <div class="container text-center text-md-start mt-5">
-                <div class="row mt-3">
-                    <!-- Website name -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="bi bi-gem footer-gem"></i>
+        <body>
+            <header>
+                <!-- Navigation Bar -->
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <div class="container">
+                        <a class="navbar-brand font-test text-center" href="/">
                             TravelPages
-                        </h6>
-                        <p>
-                            TravelPages is a social media platform that allows users to share their travel experiences
-                            with others.
-                        <p>
-                    </div>
-
-                    <!-- First link column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="bi bi-link-45deg"></i>
-                            Technology
-                        </h6>
-                        <p>
-                            <a href="https://getbootstrap.com/" target="_blank" class="text-reset">
-                                Bootstrap
-                            </a>
-                        </p>
-
-                        <p>
-                            <a href="https://jquery.com/" target="_blank" class="text-reset">
-                                jQuery
-                            </a>
-                        </p>
-
-                        <p>
-                            <a href="https://www.npmjs.com/package/nodemon" target="_blank" class="text-reset">
-                                Node
-                            </a>
-                        </p>
-
-                        <p>
-                            <a href="https://nodejs.org/en" target="_blank" class="text-reset">
-                                Nodemon
-                            </a>
-                        </p>
-
-                        <p>
-                            <a href="https://expressjs.com/" target="_blank" class="text-reset">
-                                Express
-                            </a>
-                        </p>
-
-                        <p>
-                            <a href="https://www.npmjs.com/package/express-session" target="_blank" class="text-reset">
-                                Express-Session
-                            </a>
-                        </p>
-                    </div>
-
-                    <!-- Second link column -->
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="bi bi-link-45deg"></i>
-                            Continued
-                        </h6>
-                        <p>
-                            <a href="https://www.npmjs.com/package/bcrypt" target="_blank" class="text-reset">
-                                bcrypt
-                            </a>
-                        </p>
-
-                        <p>
-                            <a href="https://handlebarsjs.com/" target="_blank" class="text-reset">
-                                Handlebars
-                            </a>
-                        </p>
-
-                        <p>
-                            <a href="https://www.npmjs.com/package/express-handlebars" target="_blank"
-                                class="text-reset">
-                                Express-Handlebars
-                            </a>
-                        </p>
-
-                        <a href="https://www.mysql.com/" target="_blank" class="text-reset">
-                            MySQL
                         </a>
-                        </p>
-                        <p>
-                            <a href="https://sequelize.org/" target="_blank" class="text-reset">
-                                Sequelize
-                            </a>
-                        </p>
-                        <p>
-                            <a href="https://www.npmjs.com/package/connect-session-sequelize" target="_blank"
-                                class="text-reset">
-                                Connect-Session-Sequelize
-                            </a>
-                        </p>
                     </div>
-
-                    <!-- Contact link column for Github -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="bi bi-github footer-contact-github"></i>
-                            Contact
-                        </h6>
-                        <p>
-                            <a href="https://github.com/GeorgeCJohnson" target="_blank" class="text-reset">
-                                GeorgeCJohnson
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto">
+                            {{!logic to handle login/signup buttons}}{{#unless user.isLoggedIn}}
+                            <a class="js-signin-modal-trigger btn btn-light login-nav-Btn" href="#0"
+                                data-signin="login">
+                                Login
                             </a>
-                        </p>
-                        <p>
-                            <a href="https://github.com/GeorgeCJohnson" target="_blank" class="text-reset">
-                                Benjamin Escobar
+                            <a class="js-signin-modal-trigger btn btn-light login-nav-Btn" href="#0"
+                                data-signin="signup">
+                                Signup
                             </a>
-                        </p>
-                        <p>
-                            <a href="https://github.com/GeorgeCJohnson" target="_blank" class="text-reset">
-                                Devon Hua
+                            <a class="nav-item nav-link active" role="button" href="/discover" data-toggle="tooltip"
+                                data-placement="top" title="Discover">
+                                <!-- Insert icon that navigates to discover_page.handlebars -->
+                                <i class="bi bi-compass navIcon">
+                                </i>
                             </a>
-                        </p>
+                            <a class="nav-item nav-link active" href="/pins/user" data-toggle="tooltip"
+                                data-placement="top" title="Pins">
+                                <!-- Insert icon that navigates to pins.handlebars -->
+                                <i class="bi bi-pin-map-fill navIcon">
+                                </i>
+                            </a>
+                            <img src="" class="nav-item nav-link active dropdown-toggle user-avatar" href="#"
+                                role="button" id="user-profile-pic" data-bs-toggle="dropdown" data-toggle="tooltip"
+                                title="Profile" aria-expanded="false" width="50px" />
+                            <a class="nav-item nav-link active dropdown-toggle" href="#" role="button"
+                                id="user-username" data-bs-toggle="dropdown" aria-expanded="false">
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="user-username">
+                                <li>
+                                    <a class="dropdown-item" href="/editprofile">
+                                        Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" id="logout-btn" href="/logout">
+                                        Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--J Dempe assisted with the styling and pins ideas-->
+                        {{else}}
+                        <a class="nav-item nav-link active" role="button" href="/discover" data-toggle="tooltip"
+                            data-placement="top" title="Discover">
+                            <!-- Insert icon that navigates to discover_page.handlebars -->
+                            <i class="bi bi-compass navIcon">
+                            </i>
+                        </a>
+                        <a class="nav-item nav-link active" href="/pins/user" data-toggle="tooltip" data-placement="top"
+                            title="Pins">
+                            <!-- Insert icon that navigates to pins.handlebars -->
+                            <i class="bi bi-pin-map-fill navIcon">
+                            </i>
+                        </a>
+                        <img src="" class="nav-item nav-link active dropdown-toggle user-avatar" href="#" role="button"
+                            id="user-profile-pic" data-bs-toggle="dropdown" data-toggle="tooltip" title="Profile"
+                            aria-expanded="false" width="50px" />
+                        <a class="nav-item nav-link active dropdown-toggle" href="#" role="button" id="user-username"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="user-username">
+                            <li>
+                                <a class="dropdown-item" href="/editprofile">
+                                    Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" id="logout-btn" href="/logout">
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
                     </div>
+                    {{/unless}}
+                </nav>
+            </header>
+        </body>
+        </link>
+        <main>
+            <!-- Main Page -->
+            {{{body}}}
+        </main>
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <!-- Social Media Content -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <!-- Get connected section -->
+                <div class="me-5 d-none d-lg-block">
+                    <span>
+                        Get connected with us!:
+                    </span>
                 </div>
-            </div>
+                <!-- Website description / links / contact  -->
+                <div class="container text-center text-md-start mt-5">
+                    <div class="row mt-3">
+                        <!-- Website name -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="bi bi-gem footer-gem">
+                                </i>
+                                TravelPages
+                            </h6>
+                            <p>
+                                TravelPages is a social media platform that allows users to share their travel experiences with others.
+                            <p>
+                            </p>
+                            <!-- First link column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    <i class="bi bi-link-45deg">
+                                    </i>
+                                    Technology
+                                </h6>
+                                <p>
+                                    <a href="https://getbootstrap.com/" target="_blank" class="text-reset">
+                                    Bootstrap
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://jquery.com/" target="_blank" class="text-reset">
+                                    jQuery
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://www.npmjs.com/package/nodemon" target="_blank" class="text-reset">
+                                    Node
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://nodejs.org/en" target="_blank" class="text-reset">
+                                    Nodemon
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://expressjs.com/" target="_blank" class="text-reset">
+                                    Express
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://www.npmjs.com/package/express-session" target="_blank"
+                                    class="text-reset">
+                                    Express-Session
+                                    </a>
+                                </p>
+                            </div>
+                            <!-- Second link column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    <i class="bi bi-link-45deg">
+                                    </i>
+                                    Continued
+                                </h6>
+                                <p>
+                                    <a href="https://www.npmjs.com/package/bcrypt" target="_blank" class="text-reset">
+                                    bcrypt
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://handlebarsjs.com/" target="_blank" class="text-reset">
+                                    Handlebars
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://www.npmjs.com/package/express-handlebars" target="_blank"
+                                        class="text-reset">
+                                    Express-Handlebars
+                                    </a>
+                                </p>
+                                <a href="https://www.mysql.com/" target="_blank" class="text-reset">
+                                    MySQL
+                                </a>
+                            </div>
+                            <p>
+                                <a href="https://sequelize.org/" target="_blank" class="text-reset">
+                                    Sequelize
+                                </a>
+                            </p>
+                            <p>
+                                <a href="https://www.npmjs.com/package/connect-session-sequelize" target="_blank"
+                                    class="text-reset">
+                                    Connect-Session-Sequelize
+                                </a>
+                            </p>
+                            </p>
+                            <!-- Contact link column for Github -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    <i class="bi bi-github footer-contact-github">
+                                    </i>
+                                    Contact
+                                </h6>
+                                <p>
+                                    <a href="https://github.com/GeorgeCJohnson" target="_blank" class="text-reset">
+                                        GeorgeCJohnson
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://github.com/benjaminescobar1" target="_blank" class="text-reset">
+                                        Benjamin Escobar
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://github.com/devonforyou" target="_blank" class="text-reset">
+                                        Devon Hua
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Copyright -->
+                    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                        2023 Copyright
+                        <a class="text-reset fw-bold" href="">
+                            TravelPages
+                        </a>
+                    </div>
+                    <!-- Copyright -->
+                </div>
+                {{! Modal Section}}{{! Provide by https://codyhouse.co/gem/loginsignup-modal-window/ This information was provided by J Dempe}}
+                <div class="body-modal cd-signin-modal js-signin-modal fade">
+                    <!-- Modal form-->
+                    <div class="cd-signin-modal__container">
+                        <!-- Container wrapper -->
+                        <ul class="cd-signin-modal__switcher js-signin-modal-switcher js-signin-modal-trigger"
+                            style="list-style-type: none">
+                            <li>
+                                <a href="#0" data-signin="login" data-type="login">
+                                    Sign in
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#0" data-signin="signup" data-type="signup">
+                                    New account
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="cd-signin-modal__block js-signin-modal-block" data-type="login">
+                            <!-- log in form -->
+                            <form class="cd-signin-modal__form">
+                                <p class="cd-signin-modal__fieldset">
+                                    <labelclass for="remember-me"
+                                        inputclass="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border login-input"
+                                        id="remember-me" type="checkbox" placeholder="Password"
+                                        class="cd-signin-modal__fieldset"
+                                        labelclass="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace"
+                                        autocomplete="off" href="#0" ss="cd-signin-modal__fieldset">
+                                        <input id="login-btn"
+                                            class="cd-signin-modal__input cd-signin-modal__input--full-width"
+                                            type="submit" value="Login" />
+                                    </labelclass>
+                                </p>
+                            </form>
+                            <div class="cd-signin-modal__block js-signin-modal-block" data-type="reset">
+                                <!-- Password reset -->
+                                <p class="cd-signin-modal__message">
+                                    Please enter your email address. You will receive a link to create a new password.
+                                </p>
+                                <form class="cd-signin-modal__form">
+                                    <p class="cd-signin-modal__fieldset">
+                                        <labelclass for="reset-email"
+                                            inputclass="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding"
+                                            id="reset-email" type="submit" placeholder="E-mail"
+                                            class="cd-signin-modal__fieldset" pe="submit" value="Reset password" />
+                                    </p>
+                                </form>
+                                <p class="cd-signin-modal__bottom-message js-signin-modal-trigger">
+                                    <a href="login" data-signin="login">
+                                        Back to log-in
+                                    </a>
+                                </p>
+                            </div>
+                            <!-- cd-signin-modal__block -->
+                            <a href="#0" class="cd-signin-modal__close js-close">
+                                Close
+                            </a>
+                        </div>
+                    </div>
+                    <!-- cd-signin-modal -->
+                </div>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+                </script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js">
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js">
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+                </script>
+                <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js">
+                </script>
+                <script src="./handlers/user-auth.js">
+                </script>
+                <script src="./js/script.js">
+                </script>
+                <script src="./js/modal.js">
+                </script>
+                {{!-- load each script in --}}{{#each scripts}}
+                <script src="./js/{{this}}.js">
+                </script>
+                {{/each}}
+            </section>
+            <Question ID="1" Shortcut="ChapterEnd" Order="1" ElementType="chapter" Translated="0">
+                <LongCaption>
+                    End
+                </LongCaption>
+            </Question>
+        </footer>
+        </link>
+        </link>
+        </head>
 
-            <!-- Copyright -->
-            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                © 2023 Copyright
-                <a class="text-reset fw-bold" href="">TravelPages</a>
-            </div>
-
-            <!-- Copyright -->
-    </footer>
-
-    {{! Modal Section}}
-    {{! Provide by https://codyhouse.co/gem/loginsignup-modal-window/ This information was provided by J Dempe}}
-    <div class="body-modal cd-signin-modal js-signin-modal fade">
-
-        <!-- Modal form-->
-        <div class="cd-signin-modal__container">
-
-            <!-- Container wrapper -->
-            <ul class="cd-signin-modal__switcher js-signin-modal-switcher js-signin-modal-trigger"
-                style="list-style-type: none">
-                <li><a href="#0" data-signin="login" data-type="login">Sign in</a></li>
-                <li><a href="#0" data-signin="signup" data-type="signup">New account</a></li>
-            </ul>
-            <div class="cd-signin-modal__block js-signin-modal-block" data-type="login">
-                <!-- log in form -->
-                <form class="cd-signin-modal__form">
-                    <p class="cd-signin-modal__fieldset">
-                        <label
-                            class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace"
-                            for="signin-email">E-mail</label>
-                        <input
-                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border login-input"
-                            id="signin-email" type="email" placeholder="E-mail" />
-                        <span class="cd-signin-modal__error login-short-email">Please provide a valid email
-                            address!</span>
-                    </p>
-
-                    <p class="cd-signin-modal__fieldset">
-                        <label
-                            class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace"
-                            for="signin-password">Password</label>
-                        <input
-                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border login-input"
-                            id="signin-password" type="password" placeholder="Password" autocomplete="off" />
-                        <a href="#0" class="cd-signin-modal__hide-password js-hide-password">Show</a>
-                        <span class="cd-signin-modal__error error-404">The email or password provided is incorrect. Please try again.
-                        </span>
-                        <span class="cd-signin-modal__error error-500">We have encountered an issue. Please try again later.
-                        </span>
-                        <span class="cd-signin-modal__error login-short-password">
-                            Password should be 8-128 characters long and contain alphanumeric, uppercase and special characters.
-                        </span>
-                    </p>
-
-                    <p class="cd-signin-modal__fieldset">
-                        <input type="checkbox" id="remember-me" checked class="cd-signin-modal__input" />
-                        <label for="remember-me">Remember me</label>
-                    </p>
-
-                    <p class="cd-signin-modal__fieldset">
-                        <input id="login-btn" class="cd-signin-modal__input cd-signin-modal__input--full-width"
-                            type="submit" value="Login" />
-                    </p>
-                </form>
-            </div>
-
-            <div class="cd-signin-modal__block js-signin-modal-block" data-type="reset">
-
-                <!-- Password reset -->
-                <p class="cd-signin-modal__message">Please enter your email address. You will receive a link to create a new password.</p>
-
-                <form class="cd-signin-modal__form">
-                    <p class="cd-signin-modal__fieldset">
-                        <label
-                            class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace"
-                            for="reset-email">E-mail</label>
-                        <input
-                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"
-                            id="reset-email" type="email" placeholder="E-mail" />
-                        <span class="cd-signin-modal__error">Error message</span>
-                    </p>
-
-                    <p class="cd-signin-modal__fieldset">
-                        <input
-                            class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding"
-                            type="submit" value="Reset password" />
-                    </p>
-                </form>
-
-                <p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a href="login" data-signin="login">
-                        Back to log-in</a>
-                </p>
-            </div>
-            <!-- cd-signin-modal__block -->
-            <a href="#0" class="cd-signin-modal__close js-close">Close</a>
-        </div>
-    </div>
-
-    <!-- cd-signin-modal -->
-</body>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
-<script src="./handlers/user-auth.js"></script>
-<script src="./js/script.js"></script>
-<script src="./js/modal.js"></script>
-{{!-- load each script in --}}
-{{#each scripts}}
-<script src="./js/{{this}}.js"></script>
-{{/each}}
-
-</html>
+        </html>
+    </Questions>
+</Survey>
