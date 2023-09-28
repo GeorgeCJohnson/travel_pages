@@ -8,7 +8,7 @@
     "start": "node server.js",
     "watch": "node --watch server.js",
     "nodemon": "nodemon server.js",
-    "seed": "node ./seeds/index.js"
+    "seed": "node seeds/index.js"
   },
   "author": "",
   "license": "ISC",
