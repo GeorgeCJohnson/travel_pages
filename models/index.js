@@ -1,7 +1,7 @@
 // Import Sequelize models
 const Avatar = require("./Avatar");
 const Pin = require("./Pin");
-const User = require("./User");
+const User = require("./user");
 
 // Define associations between models
 
