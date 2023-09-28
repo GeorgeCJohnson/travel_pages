@@ -1,0 +1,23 @@
+
+[
+    {
+    "avatarName": "Avatar1",
+    "avatarImage": "avatar1.jpg", 
+    "user_id": 1 
+    },
+    {
+    "avatarName": "Avatar2",
+    "avatarImage": "avatar2.jpg",
+    "user_id": 2
+    },
+    {
+    "avatarName": "Avatar3",
+    "avatarImage": "avatar3.jpg",
+    "user_id": 3
+    },
+    {
+    "avatarName": "Avatar4",
+    "avatarImage": "avatar4.jpg",
+    "user_id": 4
+    }
+]
