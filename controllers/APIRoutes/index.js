@@ -3,9 +3,9 @@ const userRoutes = require("./userRoutes");
 const avatarRoutes = require("./avatarRoutes");
 const pinRoutes= require("./pinRoutes");
 
-router.use("/user", userRoutes);
-router.use("/avatars", avatarRoutes);
-router.use("/pins", pinRoutes);
+router.use("/controllers/APIRoutes/userRoutes.js", userRoutes);
+router.use("/controllers/APIRoutes/avatarRoutes.js", avatarRoutes);
+router.use("/controllers/APIRoutes/pinRoutes.js", pinRoutes);
 
 //Catch undefined API routes
 router.use((req, res) => {
