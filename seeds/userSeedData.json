@@ -13,7 +13,7 @@
         "last_name": "Johnson",
         "email": "ilovecoding@gmail.com",
         "password": "yup!HeIsCool",
-        "avatar_id": 2
+        "avatar_id": 4
       },
       {
         "username": "DManthegreat",
@@ -21,7 +21,7 @@
         "last_name": "Hua",
         "email": "Dmanthegreat@aol.com",
         "password": "rockyourworld1!",
-        "avatar_id": 3
+        "avatar_id": 6
       },
     {
       "username": "JohnCatchesFlights",
@@ -29,7 +29,7 @@
       "last_name": "Doe",
       "email": "jdoe@yahoo.com",
       "password": "hereigo!",
-      "avatar_id": 4
+      "avatar_id": 7
     },
     {
       "username": "JaneRocks",
@@ -45,6 +45,6 @@
       "last_name": "Hollister",
       "email": "JennyH@aol.com",
       "password": "hellOPW231!",
-      "avatar_id": 1
+      "avatar_id": 3
     }
   ]
