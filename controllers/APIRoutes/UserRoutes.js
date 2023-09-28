@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-const { User, Avatars, Post } = require("../../models"); 
+const { User, Avatar, Post } = require("../../models"); 
 
 // USER AUTHENTICATION ROUTES //
 // set up a route for users to sign up.

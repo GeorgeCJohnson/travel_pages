@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const { Pins } = require("../../models");
+const { Pin } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 
 //GET route to retrieve all pins
 router.get("/", async (req, res) => {
   try {
-    const pins = await Pins.findAll();
+    const pins = await Pin.findAll();
     res.status(200).json(pins);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 //GET route to retrieve a specific pin by pin ID
 router.get("/:pinid", async (req, res) => {
   try {
-    const pins = await Pins.findByPk(req.params.pinid);
+    const pins = await Pin.findByPk(req.params.pinid);
     if (pins) {
       res.status(200).json(pins);
     } else {
@@ -52,15 +52,15 @@ router.post("/create/:id", withAuth, async (req, res) => {
 //PUT route to update a pin
 router.put("/update/:pinid", withAuth, async (req, res) => {
   try {
-    const [updated] = await Pins.update(req.body, {
+    const [updated] = await Pin.update(req.body, {
       where: { id: req.params.pinid },
     });
 
     if (updated !== 0) {
-      const updatedPin = await Pins.findByPk(req.params.pinid);
+      const updatedPin = await Pin.findByPk(req.params.pinid);
       res.status(200).json(updatedPin);
     } else {
-      const existingPin = await Pins.findByPk(req.params.pinid);
+      const existingPin = await Pin.findByPk(req.params.pinid);
       if (existingPin) {
         res.status(200).json({ message: "No update has been made." });
       } else {
@@ -75,7 +75,7 @@ router.put("/update/:pinid", withAuth, async (req, res) => {
 // DELETE route to delete a Pin
 router.delete("/delete/:id", withAuth, async (req, res) => {
   try {
-    const pinData = await Pins.destroy({
+    const pinData = await Pin.destroy({
       where: {
         id: req.params.id,
         user_id: req.params.id, // Use the correct parameter

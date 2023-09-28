@@ -1,34 +1,28 @@
 <html lang="en">
-
   <head>
-    <title>Travel Pages</title>
+    <title>
+      Travel Pages
+    </title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <base href="/" />
     <link href="/public/css/reset.css" rel="stylesheet" />
-     <link
+
+    <link
       rel="icon"
       type="image/png"
       sizes="16x16"
       href="/public/favicon/favicon-16x16.png"
     />
-    <link
-      rel="apple-touch-icon"
-      href="/public/favicon/favicon.ico"
-    />
+    <link rel="apple-touch-icon" href="/public/favicon/favicon.ico" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="/public/favicon/favicon-32x32.png"
     />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/public/favicon/favicon-16x16.png"
-    />
+  
     <link rel="manifest" href="/public/favicon/site.webmanifest" />
     <link
       href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap"
@@ -73,7 +67,9 @@
       <!-- NAVBAR / goes in main.handlebars -->
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand font-test text-center" href="/">TravelPages</a>
+          <a class="navbar-brand font-test text-center" href="/">
+            TravelPages
+          </a>
         </div>
         <button
           class="navbar-toggler"
@@ -94,12 +90,16 @@
                 class="js-signin-modal-trigger btn btn-light login-nav-Btn"
                 href="#0"
                 data-signin="login"
-              >Log in</a>
+              >
+                Log in
+              </a>
               <a
                 class="js-signin-modal-trigger btn btn-light login-nav-Btn"
                 href="#0"
                 data-signin="signup"
-              >Sign up</a>
+              >
+                Sign up
+              </a>
               <a
                 class="nav-item nav-link active"
                 role="button"
@@ -157,15 +157,16 @@
                   aria-expanded="false"
                 ></a>
                 <ul class="dropdown-menu" aria-labelledby="user-username">
-                  <li><a
-                      class="dropdown-item"
-                      href="/editprofile"
-                    >Settings</a></li>
-                  <li><a
-                      class="dropdown-item"
-                      id="logout-btn"
-                      href="/logout"
-                    >Logout</a></li>
+                  <li>
+                    <a class="dropdown-item" href="/editprofile">
+                      Settings
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" id="logout-btn" href="/logout">
+                      Logout
+                    </a>
+                  </li>
                 </ul>
               </div>
             {{/if}}
@@ -192,7 +193,9 @@
       >
         <!-- GET CONNECTED WITH US -->
         <div class="me-5 d-none d-lg-block">
-          <span>Get connected with us on social networks:</span>
+          <span>
+            Get connected with us on social networks:
+          </span>
         </div>
         <!-- EXAMPLE SOCIAL MEDIA ICONS -->
         <div>
@@ -382,7 +385,9 @@
         style="background-color: rgba(0, 0, 0, 0.05);"
       >
         © 2023 Copyright:
-        <a class="text-reset fw-bold" href="">TravelPages</a>
+        <a class="text-reset fw-bold" href="">
+          TravelPages
+        </a>
       </div>
       <!-- Copyright -->
     </footer>
@@ -398,8 +403,16 @@
           class="cd-signin-modal__switcher js-signin-modal-switcher js-signin-modal-trigger"
           style="list-style-type: none"
         >
-          <li><a href="#0" data-signin="login" data-type="login">Sign in</a></li>
-          <li><a href="#0" data-signin="signup" data-type="signup">New account</a></li>
+          <li>
+            <a href="#0" data-signin="login" data-type="login">
+              Sign in
+            </a>
+          </li>
+          <li>
+            <a href="#0" data-signin="signup" data-type="signup">
+              New account
+            </a>
+          </li>
         </ul>
 
         <div
@@ -412,22 +425,28 @@
               <label
                 class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace"
                 for="signin-email"
-              >E-mail</label>
+              >
+                E-mail
+              </label>
               <input
                 class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border login-input"
                 id="signin-email"
                 type="email"
                 placeholder="E-mail"
               />
-              <span class="cd-signin-modal__error login-short-email">Please
-                provide a valid email address!</span>
+              <span class="cd-signin-modal__error login-short-email">
+                Please
+                provide a valid email address!
+              </span>
             </p>
 
             <p class="cd-signin-modal__fieldset">
               <label
                 class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace"
                 for="signin-password"
-              >Password</label>
+              >
+                Password
+              </label>
               <input
                 class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border login-input"
                 id="signin-password"
@@ -438,13 +457,18 @@
               <a
                 href="#0"
                 class="cd-signin-modal__hide-password js-hide-password"
-              >Show</a>
-              <span class="cd-signin-modal__error error-404">The email or
+              >
+                Show
+              </a>
+              <span class="cd-signin-modal__error error-404">
+                The email or
                 password provided is incorrect. Please try again.
               </span>
-              <span class="cd-signin-modal__error error-500">We have encountered an issue on our end.
+              <span class="cd-signin-modal__error error-500">
+                We have encountered an issue on our end.
               </span>
-              <span class="cd-signin-modal__error login-short-password">Password
+              <span class="cd-signin-modal__error login-short-password">
+                Password
                 should be 8-128 characters long and contain alphanumeric,
                 uppercase and special characters!
               </span>
@@ -457,7 +481,9 @@
                 checked
                 class="cd-signin-modal__input"
               />
-              <label for="remember-me">Remember me</label>
+              <label for="remember-me">
+                Remember me
+              </label>
             </p>
 
             <p class="cd-signin-modal__fieldset">
@@ -482,7 +508,9 @@
               <label
                 class="cd-signin-modal__label cd-signin-modal__label--username cd-signin-modal__label--image-replace"
                 for="signup-username"
-              >Username</label>
+              >
+                Username
+              </label>
               <input
                 class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border signup-input"
                 id="signup-username"
@@ -491,34 +519,46 @@
                 minlength="3"
                 maxlength="20"
               />
-              <span class="cd-signin-modal__error username-validation">The
-                username must be alphanumeric and have 3-20 characters!</span>
-              <span class="cd-signin-modal__error username-error-422">The
-                username is already taken. Please choose a different username.</span>
+              <span class="cd-signin-modal__error username-validation">
+                The
+                username must be alphanumeric and have 3-20 characters!
+              </span>
+              <span class="cd-signin-modal__error username-error-422">
+                The
+                username is already taken. Please choose a different username.
+              </span>
             </p>
 
             <p class="cd-signin-modal__fieldset">
               <label
                 class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace"
                 for="signup-email"
-              >E-mail</label>
+              >
+                E-mail
+              </label>
               <input
                 class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border signup-input"
                 id="signup-email"
                 type="email"
                 placeholder="E-mail"
               />
-              <span class="cd-signin-modal__error email-validation">Please
-                provide a valid email address!</span>
-              <span class="cd-signin-modal__error email-error-422">The user with
-                the provided email already exists. Please try to log in!</span>
+              <span class="cd-signin-modal__error email-validation">
+                Please
+                provide a valid email address!
+              </span>
+              <span class="cd-signin-modal__error email-error-422">
+                The user with
+                the provided email already exists. Please try to log in!
+              </span>
             </p>
 
             <p class="cd-signin-modal__fieldset">
               <label
                 class="cd-signin-modal__label cd-signin-modal__label--password cd-signin-modal__label--image-replace"
                 for="signup-password"
-              >Password</label>
+              >
+                Password
+              </label>
               <input
                 class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border signup-input"
                 id="signup-password"
@@ -529,12 +569,18 @@
               <a
                 href="#0"
                 class="cd-signin-modal__hide-password js-hide-password"
-              >Hide</a>
-              <span class="cd-signin-modal__error password-validation">Password
+              >
+                Hide
+              </a>
+              <span class="cd-signin-modal__error password-validation">
+                Password
                 should be 8-128 characters long and contain alphanumeric,
-                uppercase and special characters!</span>
-              <span class="cd-signin-modal__error error-500">We have encountered
-                an issue on our end.</span>
+                uppercase and special characters!
+              </span>
+              <span class="cd-signin-modal__error error-500">
+                We have encountered
+                an issue on our end.
+              </span>
             </p>
             <p class="cd-signin-modal__fieldset">
               <input
@@ -554,22 +600,28 @@
           data-type="reset"
         >
           <!-- reset password form -->
-          <p class="cd-signin-modal__message">To recover password, please enter
-            your email address. We will send a link to create a new password.</p>
+          <p class="cd-signin-modal__message">
+            To recover password, please enter
+            your email address. We will send a link to create a new password.
+          </p>
 
           <form class="cd-signin-modal__form">
             <p class="cd-signin-modal__fieldset">
               <label
                 class="cd-signin-modal__label cd-signin-modal__label--email cd-signin-modal__label--image-replace"
                 for="reset-email"
-              >E-mail</label>
+              >
+                E-mail
+              </label>
               <input
                 class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border"
                 id="reset-email"
                 type="email"
                 placeholder="E-mail"
               />
-              <span class="cd-signin-modal__error">Error message here!</span>
+              <span class="cd-signin-modal__error">
+                Error message here!
+              </span>
             </p>
 
             <p class="cd-signin-modal__fieldset">
@@ -581,18 +633,20 @@
             </p>
           </form>
 
-          <p class="cd-signin-modal__bottom-message js-signin-modal-trigger"><a
-              href="login"
-              data-signin="login"
-            >Back to log-in</a></p>
+          <p class="cd-signin-modal__bottom-message js-signin-modal-trigger">
+            <a href="login" data-signin="login">
+              Back to log-in
+            </a>
+          </p>
         </div>
         <!-- cd-signin-modal__block -->
-        <a href="#0" class="cd-signin-modal__close js-close">Close</a>
+        <a href="#0" class="cd-signin-modal__close js-close">
+          Close
+        </a>
       </div>
       <!-- cd-signin-modal__container -->
     </div>
     <!-- cd-signin-modal -->
-
   </body>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -615,5 +669,4 @@
   {{#each scripts}}
     <script src="/public/js/{{this}}.js"></script>
   {{/each}}
-
 </html>

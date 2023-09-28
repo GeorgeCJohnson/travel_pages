@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const { User, Avatars, Pins } = require("../../models");
+const { User, Avatar, Pin } = require("../models");
 
 // GET discovery page
 // Navigate to /discover and pull 20 pins to display along with username and avatar
-router.get("/discover", async (req, res) => {
+router.get("/public/js/discovery-page.js", async (req, res) => {
   try {
     // Grab all pins from the database
-    const pins = await Pins.findAll();
+    const pins = await Pin.findAll();
 
     // Shuffles the pins array using  algorithm
     for (let i = pins.length - 1; i > 0; i--) {
@@ -39,7 +39,7 @@ router.get("/discover", async (req, res) => {
       pinsData[i].pinUsername = user.username;
 
       // lookup the avatar src from the user's avatar_id
-      const avatarData = await Avatars.findByPk(user.avatar_id);
+      const avatarData = await Avatar.findByPk(user.avatar_id);
       const avatar = avatarData.get({ plain: true });
       pinsData[i].pinAvatar = avatar.avatarsImage;
     }
@@ -121,7 +121,7 @@ router.get("/pins/user/:username", async (req, res) => {
     }
 
     // Find the user's pins
-    const pins = await Pins.findAll({
+    const pins = await Pin.findAll({
       where: { user_id: user.id },
     });
 
@@ -244,11 +244,11 @@ router.get("/editprofile/:username", async (req, res) => {
     }
 
     // Pull from the avatar table the avatar image location that matches the user's avatar id
-    const avatarData = await Avatars.findByPk(user.avatar_id);
+    const avatarData = await Avatar.findByPk(user.avatar_id);
     const avatar = avatarData.get({ plain: true });
 
     // Pull from the avatar table all the avatar images for the modal
-    const avatarList = await Avatars.findAll();
+    const avatarList = await Avatar.findAll();
     const avatars = avatarList.map((avatar) => avatar.get({ plain: true }));
 
     // Render the edit profile page with the user's data
