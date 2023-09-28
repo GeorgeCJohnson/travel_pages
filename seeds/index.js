@@ -1,36 +1,27 @@
-const sequelize = require("../config/connection");
-const { User, Pins, Avatars } = require("../models");
-
-const userSeedData = require("./userSeedData.json");
-const pinSeedData = require("./pinSeedData.json");
-const avatarSeedData = require("./avatarSeedData.json");
-
-const seedDb = async () => {
-  await sequelize.sync({ force: true });
-  console.log("\n----- database synced -----\n");
-
-  const users = await User.bulkCreate(userSeedData, {
-    individualHooks: true,
-    returning: true,
-  });
-  console.log("'\n ----- Users seeded -----\n");
-
-  for (const pinData of pinSeedData) {
-    await Pins.create({
-      ...pinData,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
+{
+  "name": "travel_pages",
+  "version": "1.0.0",
+  "description": "Second group project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "node --watch server.js",
+    "nodemon": "nodemon server.js",
+    "seed": "node seeds/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mysql2": "^3.3.1",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.31.1"
   }
-  console.log("'\n ----- Pins seeded -----\n");
-
-  await Avatars.bulkCreate(avatarSeedData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  console.log("'\n ----- Avatars seeded -----\n");
-
-  process.exit(0);
-};
-
-seedDb();
+}

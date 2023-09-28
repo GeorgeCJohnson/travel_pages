@@ -1,0 +1,53 @@
+
+
+
+[
+  {
+    "pinTitle": "Beautiful Beach", 
+    "pinDescription": "A stunning beach with white sand and clear blue water.", 
+    "pinLocation": "Paradise Island", 
+    "pinGeocords": "25.123456, -80.987654", 
+    "pinLink": "https://example.com/beach", 
+    "pinCategory": "Travel", 
+    "pinTag": "Beach", 
+    "pinImage": null, 
+    "pinCompletion": false, 
+    "user_id": 1 
+  },
+  {
+    "pinTitle": "Gourmet Restaurant",
+    "pinDescription": "A gourmet restaurant with delicious cuisine.",
+    "pinLocation": "City Center",
+    "pinGeocords": "40.712776, -74.005974",
+    "pinLink": "https://example.com/restaurant",
+    "pinCategory": "Food",
+    "pinTag": "Restaurant",
+    "pinImage": null,
+    "pinCompletion": true,
+    "user_id": 2
+  },
+  {
+    "pinTitle": "Mountain Hiking",
+    "pinDescription": "An adventurous hike through the mountains.",
+    "pinLocation": "Mountain Range",
+    "pinGeocords": "35.678901, -118.987654",
+    "pinLink": null,
+    "pinCategory": "Adventure",
+    "pinTag": "Hiking",
+    "pinImage": null,
+    "pinCompletion": false,
+    "user_id": 3
+  },
+  {
+    "pinTitle": "Historical Landmark",
+    "pinDescription": "Visiting a famous historical site.",
+    "pinLocation": "Historical Town",
+    "pinGeocords": "48.123456, 4.987654",
+    "pinLink": "https://example.com/history",
+    "pinCategory": "History",
+    "pinTag": "Landmark",
+    "pinImage": null,
+    "pinCompletion": true,
+    "user_id": 4
+  }
+]
