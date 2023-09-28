@@ -92,7 +92,7 @@ User.init(
     timestamps: false, // Disable timestamps (e.g., createdAt, updatedAt)
     underscored: true, // Use underscores in field names (e.g., first_name instead of firstName)
     freezeTableName: true, // Prevent Sequelize from pluralizing the table name
-    modelName: "user", // Define the model name
+    modelName: "User", // Define the model name
   }
 );
 
