@@ -27,12 +27,12 @@
     </div>
     {{> search-bar}}
 
+
   </div>
   <div class="no-results-container no-results-container-noshow">
     <div>
       <span class="no-results-shrug">¯\_(ツ)_/¯</span>
       <span class="no-results-text">No results found</span>
-      {{!-- <img src="" alt="No Results"> --}}
     </div>
   </div>
 
@@ -62,7 +62,7 @@
       <div class="card card-pin-color">
         <form class="card-body needs-validation" novalidate>
           <div class="card-top-section">
-            <!-- Display pin name -->
+            <!-- DISPLAY PIN TITLE -->
             <input required type="text" class="card-title" placeholder="Enter Title" aria-label="Pin Title"
               minlength="1">
             <div class="valid-feedback">
@@ -71,13 +71,14 @@
             <div class="invalid-feedback">
               Please enter a title.
             </div>
-            <!-- Actions should have confirmation required -->
             <div class="card-icon-section">
+              <!-- PROFILE ICON / navigates to edit_profile.handlebars -->
+              <i class="bi bi-pencil card-icon"></i>
               <i class="bi bi-trash card-icon"></i>
             </div>
           </div>
           <hr class="hr card-hr" />
-          <!-- Card -->
+          <!-- CARD TEXT -->
           <textarea class="card-text form-control" placeholder="Enter Text" id="validationTextarea"
             aria-label="Pin Body Text" required></textarea>
           <div class="changes-btn-container">
@@ -88,7 +89,6 @@
               Discard Changes
             </button>
           </div>
-
         </form>
       </div>
     </div>
