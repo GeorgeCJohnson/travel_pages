@@ -4,7 +4,7 @@ $(document).ready(function () {
   
     // On load, get the user's pinned cards by looking up the session id
     $.ajax({
-      url: "/api/user/session/lookup",
+      url: "/api/user/session/lookup/",
       method: "GET",
     }).then(function (response) {
       // if not logged in, do nothing
