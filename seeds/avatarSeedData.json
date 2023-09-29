@@ -1,66 +1,23 @@
+
 [
     {
-       "avatarsName": "1",
-       "avatarsImage": "public/images/avatars/1.jpg"
+    "avatarName": "Avatar1",
+    "avatarImage": "avatar1.jpg", 
+    "user_id": 1 
     },
     {
-       "avatarsName": "2",
-       "avatarsImage": "public/images/avatars/2.jpg"
+    "avatarName": "Avatar2",
+    "avatarImage": "avatar2.jpg",
+    "user_id": 2
     },
     {
-       "avatarsName": "3",
-       "avatarsImage": "public/images/avatars/3.jpg"
+    "avatarName": "Avatar3",
+    "avatarImage": "avatar3.jpg",
+    "user_id": 3
     },
     {
-       "avatarsName": "4",
-       "avatarsImage": "public/images/avatars/4.jpg"
-    },
-    {
-       "avatarsName": "5",
-       "avatarsImage": "public/images/avatars/5.jpg"
-    },
-    {
-       "avatarsName": "6",
-       "avatarsImage": "public/images/avatars/6.jpg"
-    },
-    {
-       "avatarsName": "7",
-       "avatarsImage": "public/images/avatars/7.jpg"
-    },
-    {
-       "avatarsName": "8",
-       "avatarsImage": "public/images/avatars/8.jpg"
-    },
-    {
-       "avatarsName": "9",
-       "avatarsImage": "public/images/avatars/9.jpg"
-    },
-    {
-       "avatarsName": "10",
-       "avatarsImage": "public/images/avatars/10.jpg"
-    },
-    {
-       "avatarsName": "11",
-       "avatarsImage": "public/images/avatars/11.jpg"
-    },
-    {
-       "avatarsName": "12",
-       "avatarsImage": "public/images/avatars/12.jpg"
-    },
-    {
-       "avatarsName": "13",
-       "avatarsImage": "public/images/avatars/13.jpg"
-    },
-    {
-       "avatarsName": "14",
-       "avatarsImage": "public/images/avatars/14.jpg"
-    },
-    {
-       "avatarsName": "15",
-       "avatarsImage": "public/images/avatars/15.jpg"
-    },
-    {
-       "avatarsName": "No Image",
-       "avatarsImage": "public/images/avatars/No Image.png"
+    "avatarName": "Avatar4",
+    "avatarImage": "avatar4.jpg",
+    "user_id": 4
     }
- ]
+]
