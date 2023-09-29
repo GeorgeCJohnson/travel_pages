@@ -1,9 +1,25 @@
 const router = require("express").Router();
 const { User, Avatar, Pin } = require("../models");
 
+// Define a route handler for the homepage ("/") GET request
+// http://localhost:3001/
+router.get("/", async (req, res) => {
+  try {
+    // Render the "landing page" view with post data and logged-in status
+    res.render("landing-page", {
+      id: req.session.user_id,
+      isLoggedIn: req.session.logged_in,
+    });
+  } catch (err) {
+    // Handle any errors that occur during data fetching or rendering
+    console.error(err); // Log the error for debugging
+    res.status(500).json(err); // Return a 500 Internal Server Error response
+  }
+});
+
 // GET discovery page
 // Navigate to /discover and pull 20 pins to display along with username and avatar
-router.get("/public/js/discovery-page.js", async (req, res) => {
+router.get("/discover", async (req, res) => {
   try {
     // Grab all pins from the database
     const pins = await Pin.findAll();
@@ -125,25 +141,21 @@ router.get("/pins/user/:username", async (req, res) => {
       where: { user_id: user.id },
     });
 
+    // if there is no pinID, redirect to home page
+    if (!pins[0] === "") {
+      return res.redirect("/");
+    }
 
-  // if there is no pinID, redirect to home page
-  if (!pins[0] === "") {
-    return res.redirect("/");
-  }
-
-
-      // Create an array of the pins data
-      var pinsData = pins.map((pin) => ({
-        pinID: pin.id,
-        pinTitle: pin.pinTitle,
-        pinDescription: pin.pinDescription,
-        // Take the pin.updatedAt and cut it off at the 4th space and only take the first half
-        pinDate: pin.updatedAt
-          ? pin.updatedAt.toString().split(" ").slice(0, 4).join(" ")
-          : pin.updatedAt,
-      }));
-    
-    
+    // Create an array of the pins data
+    var pinsData = pins.map((pin) => ({
+      pinID: pin.id,
+      pinTitle: pin.pinTitle,
+      pinDescription: pin.pinDescription,
+      // Take the pin.updatedAt and cut it off at the 4th space and only take the first half
+      pinDate: pin.updatedAt
+        ? pin.updatedAt.toString().split(" ").slice(0, 4).join(" ")
+        : pin.updatedAt,
+    }));
 
     // Break the saved_pins json object down and take only the pinId and put it into savedPinsData
     const savedPins = user.saved_pins;
@@ -161,7 +173,7 @@ router.get("/pins/user/:username", async (req, res) => {
       // Go through each pin in the savedPinsArray and find the pin that matches the pinId and put it into savedPinsData
       var savedPinsData = [];
       for (let i = 0; i < savedPinsArray.length; i++) {
-        const pin = await Pins.findByPk(savedPinsArray[i]);
+        const pin = await Pin.findByPk(savedPinsArray[i]);
         // Map the data required for the discovery pins to savedPinsData
         const pinData = pin.get({ plain: true });
         savedPinsData.push({
@@ -189,7 +201,7 @@ router.get("/pins/user/:username", async (req, res) => {
         savedPinsData[i].pinUsername = user.username;
 
         // Lookup the avatar src from the user's avatar_id
-        const avatarData = await Avatars.findByPk(user.avatar_id);
+        const avatarData = await Avatar.findByPk(user.avatar_id);
         const avatar = avatarData.get({ plain: true });
         savedPinsData[i].pinAvatar = avatar.avatarsImage;
       }
@@ -265,7 +277,7 @@ router.get("/editprofile/:username", async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(404).json(user);
+    res.status(404).json(err);
   }
 });
 

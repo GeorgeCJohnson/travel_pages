@@ -7,23 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base href="/" />
-    <link href="/public/css/reset.css" rel="stylesheet" />
+    <link href="./css/reset.css" rel="stylesheet" />
 
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/public/favicon/favicon-16x16.png"
+      href="./favicon/favicon-16x16.png"
     />
-    <link rel="apple-touch-icon" href="/public/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" href="./favicon/favicon.ico" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/public/favicon/favicon-32x32.png"
+      href="./favicon/favicon-32x32.png"
     />
-  
-    <link rel="manifest" href="/public/favicon/site.webmanifest" />
+
+    <link rel="manifest" href="./favicon/site.webmanifest" />
     <link
       href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap"
       rel="stylesheet"
@@ -44,21 +44,21 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link href="/public/css/modal.css" rel="stylesheet" />
-    <link href="/public/css/404.css" rel="stylesheet" />
-    <link href="/public/css/discovery-page.css" rel="stylesheet" />
-    <link href="/public/css/edit-profile.css" rel="stylesheet" />
-    <link href="/public/css/landing-page.css" rel="stylesheet" />
-    <link href="/public/css/login-signup.css" rel="stylesheet" />
-    <link href="/public/css/pins.css" rel="stylesheet" />
-    <link href="/public/css/profile.css" rel="stylesheet" />
-    <link href="/public/css/style.css" rel="stylesheet" />
-    <link href="/public/css/user-profile.css" rel="stylesheet" />
-    <link href="/public/css/validate.css" rel="stylesheet" />
+    <link href="./css/modal.css" rel="stylesheet" />
+    <link href="./css/404.css" rel="stylesheet" />
+    <link href="./css/discovery-page.css" rel="stylesheet" />
+    <link href="./css/edit-profile.css" rel="stylesheet" />
+    <link href="./css/landing-page.css" rel="stylesheet" />
+    <link href="./css/login-signup.css" rel="stylesheet" />
+    <link href="./css/pins.css" rel="stylesheet" />
+    <link href="./css/profile.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link href="./css/user-profile.css" rel="stylesheet" />
+    <link href="./css/validate.css" rel="stylesheet" />
 
     {{! load each style in }}
     {{#each styles}}
-      <link href="/public/css/{{this}}.css" rel="stylesheet" />
+      <link href="./css/{{this}}.css" rel="stylesheet" />
     {{/each}}
   </head>
 
@@ -218,9 +218,9 @@
             </h6>
             <p>
               Travel Pages is a personal travel planner. Quick and easy sign up
-              and the ability to place virtual pins along with other functions create an
-              all in one virtual companion. Discover new places, save them to
-              your list, and plan your next adventure!
+              and the ability to place virtual pins along with other functions
+              create an all in one virtual companion. Discover new places, save
+              them to your list, and plan your next adventure!
             </p>
           </div>
           <!-- First link column -->
@@ -435,8 +435,7 @@
                 placeholder="E-mail"
               />
               <span class="cd-signin-modal__error login-short-email">
-                Please
-                provide a valid email address!
+                Please provide a valid email address!
               </span>
             </p>
 
@@ -461,16 +460,14 @@
                 Show
               </a>
               <span class="cd-signin-modal__error error-404">
-                The email or
-                password provided is incorrect. Please try again.
+                The email or password provided is incorrect. Please try again.
               </span>
               <span class="cd-signin-modal__error error-500">
                 We have encountered an issue on our end.
               </span>
               <span class="cd-signin-modal__error login-short-password">
-                Password
-                should be 8-128 characters long and contain alphanumeric,
-                uppercase and special characters!
+                Password should be 8-128 characters long and contain
+                alphanumeric, uppercase and special characters!
               </span>
             </p>
 
@@ -520,12 +517,11 @@
                 maxlength="20"
               />
               <span class="cd-signin-modal__error username-validation">
-                The
-                username must be alphanumeric and have 3-20 characters!
+                The username must be alphanumeric and have 3-20 characters!
               </span>
               <span class="cd-signin-modal__error username-error-422">
-                The
-                username is already taken. Please choose a different username.
+                The username is already taken. Please choose a different
+                username.
               </span>
             </p>
 
@@ -543,12 +539,11 @@
                 placeholder="E-mail"
               />
               <span class="cd-signin-modal__error email-validation">
-                Please
-                provide a valid email address!
+                Please provide a valid email address!
               </span>
               <span class="cd-signin-modal__error email-error-422">
-                The user with
-                the provided email already exists. Please try to log in!
+                The user with the provided email already exists. Please try to
+                log in!
               </span>
             </p>
 
@@ -573,13 +568,11 @@
                 Hide
               </a>
               <span class="cd-signin-modal__error password-validation">
-                Password
-                should be 8-128 characters long and contain alphanumeric,
-                uppercase and special characters!
+                Password should be 8-128 characters long and contain
+                alphanumeric, uppercase and special characters!
               </span>
               <span class="cd-signin-modal__error error-500">
-                We have encountered
-                an issue on our end.
+                We have encountered an issue on our end.
               </span>
             </p>
             <p class="cd-signin-modal__fieldset">
@@ -601,8 +594,8 @@
         >
           <!-- reset password form -->
           <p class="cd-signin-modal__message">
-            To recover password, please enter
-            your email address. We will send a link to create a new password.
+            To recover password, please enter your email address. We will send a
+            link to create a new password.
           </p>
 
           <form class="cd-signin-modal__form">
@@ -647,27 +640,27 @@
       <!-- cd-signin-modal__container -->
     </div>
     <!-- cd-signin-modal -->
- 
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"
-  ></script>
-  <script src="./handlers/user-auth.js"></script>
-  <script src="./js/script.js"></script>
-  <script src="./js/modal.js"></script>
-  {{! load each script in }}
-  {{#each scripts}}
-    <script src="/public/js/{{this}}.js"></script>
-  {{/each}}
-   </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"
+    ></script>
+    <script src="./handlers/user-auth.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/modal.js"></script>
+    {{! load each script in }}
+    {{#each scripts}}
+      <script src="./js/{{this}}.js"></script>
+    {{/each}}
+  </body>
+
 </html>
